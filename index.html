@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>an specical wish</title>
+    <style>
+        /* --- Global Styles & Resets --- */
+        :root {
+            --background: #000; /* Black for Matrix effect */
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-green: #00FF41; /* Brighter green for Matrix feel */
+            --accent-blue: #58a6ff;
+            --border-color: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-primary);
+            font-family: 'Consolas', 'Courier New', monospace;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        /* --- Matrix Canvas Background --- */
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* This is crucial to keep it in the background */
+        }
+
+        /* --- Main Container --- */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            /* Added a semi-transparent background to make text readable over the matrix rain */
+            background-color: rgba(13, 17, 23, 0.85);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            backdrop-filter: blur(2px); /* Frosted glass effect */
+        }
+        
+        /* --- Header Section --- */
+        header {
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            color: var(--accent-green);
+            font-size: 1.8rem;
+            font-weight: normal;
+            display: inline-block;
+        }
+
+        header h1::after {
+            content: '_';
+            opacity: 1;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* --- Profile Section --- */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0 2rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-green);
+            object-fit: cover;
+            box-shadow: 0 0 15px var(--accent-green);
+        }
+
+        .profile-section h2 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            font-weight: normal;
+        }
+
+        /* --- Metadata Section --- */
+        .metadata {
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .metadata p { margin: 0; }
+
+        /* --- Icons/Logos Section --- */
+        .org-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .org-logos svg {
+            height: 35px; width: auto; fill: var(--text-secondary); transition: fill 0.3s ease;
+        }
+        .org-logos svg:hover { fill: var(--text-primary); }
+
+        /* --- Main Message Article --- */
+        article {
+            padding: 1.5rem; text-align: justify;
+        }
+        article p { margin-bottom: 1.2rem; }
+        article p:last-child { margin-bottom: 0; }
+
+        code {
+            color: var(--accent-blue); background-color: rgba(88, 166, 255, 0.1);
+            padding: 0.2em 0.4em; border-radius: 4px; font-size: 0.9em;
+        }
+        
+        /* --- Signature/Footer Section --- */
+        footer {
+            padding: 1.5rem; text-align: right; border-top: 1px solid var(--border-color);
+        }
+        footer .signature { font-style: italic; color: var(--text-primary); }
+        footer .status { margin-top: 0.5rem; font-size: 0.8rem; color: var(--accent-green); }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 600px) {
+            body { padding: 0.5rem; }
+            main { border-radius: 0; border-left: none; border-right: none; }
+            header h1 { font-size: 1.5rem; }
+            .profile-section img { width: 120px; height: 120px; }
+            .profile-section h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    
+    <canvas id="matrix-canvas"></canvas>
+
+    <main>
+        <header>
+            <h1>./execute birthday_wish.bin</h1>
+        </header>
+
+        <section class="profile-section">
+            <img src="vivek.bhaiya.ji.jpg" alt="Profile Photo of Vivek Bhaiya">
+            <h2>Vivek Bhaiya</h2>
+        </section>
+
+        <section class="metadata">
+            <p>// FILE: gratitude_protocol.js</p>
+            <p>// AUTHOR: Piyush, Raushan</p>
+            <p>// TARGET: Mentor::Bhaiya ji</p>
+            <p>// STATUS: Execution in progress...</p>
+        </section>
+
+        <section class="org-logos">
+            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>BlackRock</title><path d="M12.422 14.836c.646 0 1.288-.04 1.921-.111l.298-2.607a7.71 7.71 0 0 0-2.219.232c-.01 0-.02 0-.03-.002a4.42 4.42 0 0 1-4.2-3.303H5.21V12h2.981a4.53 4.53 0 0 1 4.231 2.836M18.79 12V9.011H12.44a4.42 4.42 0 0 1 4.198 3.301l2.152-.312Zm-6.368-5.834c.01 0 .02 0 .03-.002a7.71 7.71 0 0 0 2.219.232l.298-2.607c-.633-.07-1.275-.11-1.921-.11a4.53 4.53 0 0 0-4.231 2.835h-2.98V6.166H12.422Z M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0 0 5.373 0 12Z"/></svg>
+            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Amazon</title><path d="M22.132 21.272c-1.353.916-3.03.95-4.522.03-1.49-.92-2.274-2.31-2.274-3.791 0-.34.053-.66.143-.96.505 1.59 2.03 2.68 3.82 2.68 1.49 0 2.821-.71 3.551-1.851 1.05-1.65.65-3.851-1.12-4.991-1.77-1.141-4.04-1.36-5.88-.611-1.84.75-3.142 2.4-3.592 4.291-1.75-1.29-2.6-3.48-2.12-5.591.47-2.11 2.23-3.83 4.39-4.53 2.15-.7 4.58-.2 6.23 1.22 1.94 1.67 2.76 4.32 2.01 6.84-.33 1.11-.9 2.11-1.64 2.941a.502.502 0 0 1-.72.09c-.29-.2-.36-.59-.17-.88a4.98 4.98 0 0 0 1.23-2.31c.52-1.91-.03-3.9-1.4-5.26-1.1-1.09-2.65-1.6-4.22-1.34-1.57.26-2.92 1.28-3.48 2.76-.56 1.48-.3 3.19.68 4.43.34.42.73.8 1.17 1.12.87-2.1 2.84-3.56 5.15-3.92 1.9-.3 3.82.33 5.09 1.68 1.27 1.35 1.59 3.24.78 4.82-.4.78-1.05 1.39-1.85 1.77 0 .01 0 .02-.01.02zM8.36 15.75c-.24-.93-.36-1.89-.36-2.85 0-3.89 2.2-7.39 5.58-8.91-1.45-1.299-3.4-2.09-5.51-2.09-5.46 0-9.89 4.44-9.89 9.89 0 5.46 4.43 9.89 9.89 9.89 2.59 0 4.95-.99 6.74-2.62-2.08.3-4.23-.2-5.99-1.61z"/></svg>
+        </section>
+
+        <article>
+            <p>Even while leading at world class organizations like <code>BlackRock</code> and <code>Amazon</code> you have always made time to guide us, support us, and shape our journey with your extraordinary wisdom.</p>
+            <p>Your mentorship has never been just about technology; it is about <code>mindset</code>, <code>clarity</code>, and <code>vision</code>. Every decision you have helped us make has added direction to our path, and not once have we ever regretted following your guidance.</p>
+            <p>You have redefined what true mentorship means: leading with knowledge, inspiring with humility, and empowering through example. Thank you so much Bhaiya for giving us your valuable time despite your incredible responsibilities, for trusting us, and for helping us grow with confidence and purpose.</p>
+            <p>We genuinely wish that God keeps you always happy, satisfied, and fulfilled, and that every dream you hold turns into reality. You are not just our mentor; you are our biggest inspiration and guiding light.</p>
+        </article>
+
+        <footer>
+            <p class="signature">With deepest respect and endless gratitude,<br>Piyush and Raushan</p>
+            <p class="status">// PROCESS FINISHED WITH EXIT CODE 0</p>
+        </footer>
+    </main>
+
+    <script>
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas to full screen
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Characters for the rain - Katakana, numbers, letters
+        let katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+        let latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let nums = '0123456789';
+        let characters = katakana + latin + nums;
+        characters = characters.split('');
+
+        let fontSize = 16;
+        let columns = Math.floor(canvas.width / fontSize);
+
+        // Array to store the y-position of each drop
+        let drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function draw() {
+            // Semi-transparent background to create the fading trail effect
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent-green').trim(); // Use color from CSS variable
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                let text = characters[Math.floor(Math.random() * characters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                // Reset the drop to the top randomly to make the rain streams uneven
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                
+                // Move the drop down
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        // Adjust canvas on window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            columns = Math.floor(canvas.width / fontSize);
+            drops = [];
+            for (let x = 0; x < columns; x++) {
+                drops[x] = 1;
+            }
+        });
+    </script>
+
+</body>
+</html>
